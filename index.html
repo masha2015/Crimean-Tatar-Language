@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  
+  <script src="http://openplans.github.io/Leaflet.AnimatedMarker/src/AnimatedMarker.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+</style>
+</head>
+
+<body>
+
+  <div id="map"></div>
+
+<script id="jsbin-javascript">
+// Displays leaflet map
+
+var map = L.map('map').setView([39.491101, 76.004228], 4);
+
+L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
+  maxZoom: 18
+}).addTo(map);
+
+  
+// calls Leaflet plugin js
+
+// defines the path
+
+var line = L.polyline([
+    [47.431111, 102.659444],
+    [47.431111, 102.659444],
+    [39.491101, 76.004228],
+    [48.8251139, 58.1380177],
+    [48.6704194, 44.5067075],
+    [45.38736, 34.151377],
+    [44.1812779, 28.629339],
+    [39.513086, 31.246425],
+  
+  ]),
+  animatedMarker = L.animatedMarker(line.getLatLngs(), {
+    
+// controls the spped of animation
+  distance: 3000,  // meters
+  interval: 8, // milliseconds
+});
+
+map.addLayer(animatedMarker);
+</script>
+
+<script id="jsbin-source-html" type="text/html"><!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"><\/script>
+  <script src="//code.jquery.com/jquery-2.1.1.min.js"><\/script>
+  
+  <script src="http://openplans.github.io/Leaflet.AnimatedMarker/src/AnimatedMarker.js"><\/script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+
+<body>
+
+  <div id="map"></div>
+
+</body>
+
+</html></script>
+
+<script id="jsbin-source-css" type="text/css">html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+</script>
+
+<script id="jsbin-source-javascript" type="text/javascript">// Displays leaflet map
+
+var map = L.map('map').setView([39.491101, 76.004228], 4);
+
+L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
+  maxZoom: 18
+}).addTo(map);
+
+  
+// calls Leaflet plugin js
+
+// defines the path
+
+var line = L.polyline([
+    [47.431111, 102.659444],
+    [47.431111, 102.659444],
+    [39.491101, 76.004228],
+    [48.8251139, 58.1380177],
+    [48.6704194, 44.5067075],
+    [45.38736, 34.151377],
+    [44.1812779, 28.629339],
+    [39.513086, 31.246425],
+  
+  ]),
+  animatedMarker = L.animatedMarker(line.getLatLngs(), {
+    
+// controls the spped of animation
+  distance: 3000,  // meters
+  interval: 8, // milliseconds
+});
+
+map.addLayer(animatedMarker);</script></body>
+
+</html>
